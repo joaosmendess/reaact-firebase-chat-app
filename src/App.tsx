@@ -2,6 +2,7 @@ import { useState, useRef  } from "react";
 
 import GlobalStyles from "./style/GlobalStyle";
 import Auth from "./components/Auth";
+import Chat from "./components/Chat";
 
 import {Container, Button,  Input, Label, FormWrapper,IconDiv} from "./appStyle"
 
@@ -26,8 +27,8 @@ function App() {
   }
   return (
     <Container>
-      {room ? (
-        <div>Chat</div>
+      {room  ?(
+       <Chat room = {room} />
       ) : (
         <FormWrapper>
           <h2>Chat online</h2>
