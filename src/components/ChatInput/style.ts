@@ -2,13 +2,16 @@ import styled from "styled-components";
 
 
 export const Container = styled.input `
-width: 250px;
-
-margin: 15px 60px  ;
-padding: 10px;
-
-border-radius: 5px;
-display: flex;
-
-
+ padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 95%;
+  font-size: 16px;
+  color: #333;
+  background-color: #f3f3f3;
+  margin-bottom: 10px;
+  &:focus {
+    outline: none;
+    border-color: #4285f4;
+  }
 `

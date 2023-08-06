@@ -1,15 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
+ 
   html, body, #root {
     height: 100%;
-    
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
   }
 
   *, button, input {

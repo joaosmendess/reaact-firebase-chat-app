@@ -3,10 +3,13 @@ import { useState, useRef  } from "react";
 import GlobalStyles from "./style/GlobalStyle";
 import Auth from "./components/Auth";
 import Chat from "./components/Chat";
+import Button from "./components/Button";
 
-import {Container, Button,  Input, Label, FormWrapper,IconDiv} from "./appStyle"
 
-import { PiChatsCircleDuotone} from "react-icons/pi"
+
+import {Container,Input, FormWrapper,IconDiv,ChatHeader,IContainer,BContainer} from "./appStyle"
+
+import { AiFillWechat} from "react-icons/ai"
 
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
@@ -20,24 +23,33 @@ function App() {
   if (!isAuth) {
     return (
       <>
-        <GlobalStyles />
         <Auth setIsAuth ={setIsAuth} />
       </>
     );
   }
   return (
     <Container>
+      
+      <GlobalStyles />
+     
       {room  ?(
        <Chat room = {room} />
       ) : (
         <FormWrapper>
+          <ChatHeader>
           <h2>Chat online</h2>
+
+          </ChatHeader>
         <IconDiv>
-          <PiChatsCircleDuotone size="100" color ="blue"  />
+          <AiFillWechat size="150" />
         </IconDiv>
 
-          <Label>Enter Room Name:</Label>
-          <Input ref= {roomInputRef} />
+          <IContainer>
+            
+        
+          <Input ref= {roomInputRef} placeholder="Enter Room Name" />
+          </IContainer>
+           <BContainer>
           <Button
             onClick={() =>
               roomInputRef.current?.value && setRoom(roomInputRef.current.value)
@@ -45,6 +57,10 @@ function App() {
           >
             Enter Chat
           </Button>
+          </BContainer>
+
+          
+          
 
         </FormWrapper>
       )}
