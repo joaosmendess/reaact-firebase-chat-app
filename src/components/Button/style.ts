@@ -11,7 +11,7 @@ export const LoginButton = styled.button `
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 100%;
+  
   &:hover {
     background-color: #357ae8;
   }

@@ -7,9 +7,12 @@ import Button from "./components/Button";
 
 
 
-import {Container,Input, FormWrapper,IconDiv,ChatHeader,IContainer,BContainer} from "./appStyle"
+import {Container,Input, FormWrapper,IconDiv,ChatHeader,IContainer,BContainer,SignOutButton } from "./appStyle"
 
 import { AiFillWechat} from "react-icons/ai"
+
+import { signOut } from "firebase/auth";
+import { auth } from "./services/firebaseConfig";
 
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
@@ -19,6 +22,13 @@ function App() {
   const [room, setRoom] = useState<null | string>(null);
 
   const roomInputRef = useRef<HTMLInputElement>(null);
+  
+  const SignUserOut = async () => {
+await signOut(auth)
+cookies.remove("auth-token")
+setIsAuth(false)
+setRoom(null)
+  }
 
   if (!isAuth) {
     return (
@@ -28,6 +38,7 @@ function App() {
     );
   }
   return (
+    <>
     <Container>
       
       <GlobalStyles />
@@ -65,6 +76,10 @@ function App() {
         </FormWrapper>
       )}
     </Container>
+    <div>
+      <SignOutButton  onClick={SignUserOut} >Sign Out</SignOutButton>
+    </div>
+    </>
   );
 }
 

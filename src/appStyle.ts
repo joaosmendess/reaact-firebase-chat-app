@@ -116,3 +116,19 @@ export const BContainer = styled.div`
   margin: 45px;
 
 `;
+export const SignOutButton = styled.button`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4285f4; 
+  color: #ffffff; 
+  border: none; 
+  border-radius: 4px; 
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #357ae8; // slightly darker blue when hovered
+  }
+`;
