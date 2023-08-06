@@ -15,13 +15,19 @@ display: flex;
   color: #333;
   margin: auto;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   border-radius: 8px; 
+  @media (max-width: 416px) {
+  width: 350px;
+  height: 80vh;
+  }
 
+  @media (max-width: 1200px) {
+    width: 550px;
+  height: 65vh;
+   
+  }
 `
 export const FormWrapper = styled.form`
  display: flex;
@@ -60,6 +66,11 @@ color: #ffffff;
   justify-content: center;
   font-weight: bold;
 }
+@media (max-width: 416px) {
+  width: 320px;
+  height: 75px;
+  }
+  
 
 `
 

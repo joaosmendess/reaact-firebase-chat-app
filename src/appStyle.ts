@@ -17,6 +17,15 @@ export const Container = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  @media (max-width: 416px) {
+  width: 250px;
+  height: 50vh;
+  }
+  @media (max-width: 1200px) {
+    width: 300px;
+  height: 55vh;
+   
+  }
 `;
 
 export const FormWrapper = styled.div`
@@ -30,6 +39,10 @@ export const FormWrapper = styled.div`
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   border-radius: 8px; 
+  @media (max-width: 416px) {
+  width: 320px;
+  height: 80vh;
+  }
 `;
 
 export const Label = styled.label`
@@ -100,6 +113,10 @@ export const ChatHeader = styled.div`
     display: flex;
     justify-content: center;
     font-weight: bold;
+  }
+  @media (max-width: 416px) {
+  width: 320px;
+  height: 75px;
   }
 `;
 
